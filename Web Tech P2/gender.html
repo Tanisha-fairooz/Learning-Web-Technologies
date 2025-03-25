@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Gender</title></head>
+<body>
+<fieldset>
+    <legend> Gender </legend>
+    <input type="radio" name="option"> male
+    <input type="radio" name="option"> female
+    <input type="radio" name="option"> other 
+</fieldset>
+<br> <br>
+<button onclick="validateCheckbox()">Submit</button>
+
+<script>
+function validateCheckbox() {
+    let boxes = document.getElementsByName("option");
+    for (let box of boxes) {
+        if (box.checked) return window.location.href = "dob.html";
+    }
+    alert("At least one option must be selected");
+}
+</script>
+</body>
+</html>

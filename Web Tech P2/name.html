@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Name Validation</title></head>
+<body>
+<h2>Name</h2> 
+<input type="text" id="name" placeholder="Enter your name"> <br><br>
+<button onclick="validateName()">Submit</button>
+
+<script>
+function validateName() {
+    let name = document.getElementById("name").value.trim();
+    if (name === "") return alert("Name cannot be empty");
+
+    let words = name.split(" ").filter(word => word !== "");
+    if (words.length < 2) return alert("Name must contain at least two words");
+
+    let firstChar = name.charAt(0);
+    if (!((firstChar >= 'A' && firstChar <= 'Z') || (firstChar >= 'a' && firstChar <= 'z')))
+        return alert("Name must start with a letter");
+
+    for (let char of name) {
+        if (!(char === '.' || char === '-' || char === ' ' ||
+              (char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z'))) {
+            return alert("Invalid character in name");
+        }
+    }
+    
+    window.location.href = "mail.html";
+}
+</script>
+</body>
+</html>

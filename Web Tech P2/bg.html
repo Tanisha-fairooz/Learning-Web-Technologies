@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Bloodgroup Validation</title></head>
+<body>
+<h2>Blood Group</h2>
+<select id="dropdown">
+    <option value="">Select an option</option>
+    <option value="Option1">A+</option>
+    <option value="Option2">B+</option>
+    <option value="Option3">A-</option>
+    <option value="Option4">B-</option>
+</select>
+<br><br>
+<button onclick="validateDropdown()">Submit</button>
+
+<script>
+function validateDropdown() {
+    let selected = document.getElementById("dropdown").value;
+    if (selected === "") return alert("You must select an option");
+    window.location.href = "profile.html";
+}
+</script>
+</body>
+</html>

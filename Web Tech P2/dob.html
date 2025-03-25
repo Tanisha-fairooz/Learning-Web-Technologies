@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Date Validation</title></head>
+<body>
+
+<fieldset>
+  <legend>Date of Birth</legend>
+  <input type="date" id="date">
+</fieldset> <br>
+  <button onclick="validateDate()">Submit</button>
+
+
+<script>
+function validateDate() {
+    let dateValue = document.getElementById("date").value;
+    if (dateValue === "") return alert("Date cannot be empty");
+
+    let selectedDate = new Date(dateValue);
+    let year = selectedDate.getFullYear();
+
+    if (year < 1900 || year > 2016) {
+        alert("Year must be between 1900 and 2016");
+    } else {
+        window.location.href = "degree.html";
+    }
+}
+</script>
+
+</body>
+</html>
